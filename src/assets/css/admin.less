@@ -1,0 +1,321 @@
+li {
+  list-style: none;
+}
+
+button {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+body {
+  height: 100%;
+  background-color: #f7f7f7;
+}
+
+#admin {
+  position: relative;
+  background-color: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // overflow-y: scroll;
+  // overflow-y: auto;
+  // overflow-y: scroll;
+  // justify-content: center;
+  // 用户信息栏
+  .personal_info_panel_pc {
+    display: flex;
+    align-items: center;
+    position: relative;
+    top: 1rem;
+    width: 740px;
+    height: 150px;
+    padding: 30px;
+    // box-shadow:
+    //   0.2px 0px 35.8px rgba(0, 0, 0, 0.021),
+    //   0.6px 0px 17.7px rgba(0, 0, 0, 0.034),
+    //   1.5px 0px 0px rgba(0, 0, 0, 0.047),
+    //   5px 0px 286px rgba(0, 0, 0, 0.07);
+
+    // box-sizing: border-box;
+    // border-radius: 1rem;
+    // background: #ffffff;
+    // box-shadow:  41px 41px 82px #f2f2f2,
+    //          -41px -41px 82px #ffffff;
+    // border-radius: 12px;
+    // background: #f7f7f7;
+    // box-shadow:  7px 7px 12px #dedede,
+    //          -7px -7px 12px #ffffff;
+    border-radius: 4px;
+    background: #ffffff;
+    // box-shadow:  7px 7px 12px #e6e6e6,
+    //          -7px -7px 12px #ffffff;
+
+    .user_avatar {
+      position: relative;
+      // margin-left: 30px;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background-color: #c8c6c4;
+
+      img {
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .user_name {
+      margin-left: 20px;
+      padding: 10px 0px;
+      // width: 90px;
+      height: 90px;
+      position: relative;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+
+      // justify-content: space-around;
+      span {
+        padding-top: 10px;
+        font-size: 16px;
+        font-family: 'Microsoft Yahei';
+      }
+    }
+
+    .data_list {
+      // height: 90px;
+      height: 100%;
+      padding: 10px 0px;
+      margin-left: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      box-sizing: border-box;
+      font-size: 16px;
+
+      .data_item {
+        display: flex;
+        align-items: center;
+
+        // margin-bottom: 10px;
+        .icon {
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          line-height: 24px;
+          text-align: center;
+          color: #7bb9ff;
+          border-radius: 50%;
+          background-color: #e1efff;
+          // opacity: .8;
+          margin-right: 6px;
+        }
+      }
+    }
+
+    // 按钮列表
+    .btn_list {
+      position: absolute;
+      // right: 0;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      box-sizing: border-box;
+      font-size: 16px;
+      height: 100%;
+      padding: 30px 0px;
+      // margin-left: 20px;
+
+      button {
+        width: 100px;
+        padding: 8px 0px;
+        font-size: 1.333334rem;
+        background-color: #1e80ff;
+        border-radius: 4px;
+        color: #fff;
+      }
+
+      button:hover {
+        opacity: .8;
+      }
+
+      .layout_btn {
+        background-color: #e60012;
+      }
+    }
+  }
+
+
+
+  .detail_list {
+    width: 800px;
+    height: auto;
+    margin-top: 2.5rem;
+    background-color: #fff;
+    margin-bottom: 8rem;
+    border-radius: 4px;
+    .nav_ul {
+      display: flex;
+      width: auto;
+      height: 48px;
+      align-items: center;
+      font-size: 16px;
+      padding: 0px 10px;
+      // box-shadow: #fff 2px 2px 2px;
+      border-bottom: 1px solid #e4e6eb;
+
+      .nav_item {
+        position: relative;
+        padding: 0px 20px;
+
+        a:not(.active):hover {
+          color: #747985;
+        }
+      }
+
+      // .active {
+      //   a:hover {
+      //     color: #000 !important;
+      //   }
+      // }
+
+      .active::after {
+        content: '';
+        position: absolute;
+        height: 2px;
+        background-color: #1e80ff;
+        width: 56px;
+        bottom: -14px;
+        left: 50%;
+        margin-left: -28px;
+
+      }
+    }
+
+    .detail_content_list {
+      // margin-top: 20px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .personal_info_panel_mobile {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 840px) {
+    .personal_info_panel_pc {
+      display: none;
+    }
+
+    .personal_info_panel_mobile {
+      display: flex;
+      width: 100%;
+      margin-top: 2rem;
+      padding-bottom: 2rem;
+      // margin-bottom: 20px;
+      background-color: #fff;
+      flex-direction: column;
+
+      // align-items: center;
+      .user_info_panel {
+        padding-top: 20px;
+        display: flex;
+        padding-left: 30px;
+        // flex-direction: column;
+        // align-items: center;
+        // justify-content: center;
+        justify-items: center;
+
+        .user_avatar {
+          width: 6rem;
+          height: 6rem;
+          border-radius: 50%;
+
+          img {
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+          }
+        }
+
+        .other_info {
+          margin-left: 20px;
+
+          .user_name {
+            padding: 10px 0px;
+          }
+
+          .motto {
+            padding: 0px 0px 10px 0px;
+            line-height: 2rem;
+
+            span {
+              font-size: 16px;
+            }
+          }
+        }
+
+        .layout {
+          position: absolute;
+          right: 30px;
+
+          button {
+            padding: 8px 2rem;
+            border-radius: 4px;
+            background-color: #e60012;
+            color: #fff;
+          }
+        }
+
+      }
+
+      .person_data {
+        width: 100%;
+        padding: 0px 30px;
+        box-sizing: border-box;
+
+        .title {
+          margin-bottom: 4px;
+        }
+
+        .data_item {
+          padding: 6px 0px;
+          display: flex;
+          align-items: center;
+          font-size: 16px;
+
+          // margin-bottom: 10px;
+          .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            color: #7bb9ff;
+            border-radius: 50%;
+            background-color: #e1efff;
+            // opacity: .8;
+            margin-right: 6px;
+          }
+        }
+      }
+    }
+
+    .detail_list {
+      width: 100% !important;
+      margin-top: 2rem;
+    }
+
+    .nav_item:last-child {
+      display: none;
+    }
+  }
+}

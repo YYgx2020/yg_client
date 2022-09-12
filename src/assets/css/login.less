@@ -1,0 +1,348 @@
+li {
+  list-style: none;
+}
+
+input {
+  outline: none;
+  border: 0rem;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+#login_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  // background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1001;
+
+  .login_form_wrapper {
+    width: 26.5rem;
+    position: relative;
+    gap: 20px;
+    border-radius: 8px;
+    animation: entry 500ms forwards;
+    backdrop-filter: blur(16px);
+    background-color: rgba(255,255,255, 0.315);
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+    border: 1px rgba(255,255,255,0.4) solid;
+    border-bottom: 1px rgba(40,40,40,0.35) solid;
+    border-right: 1px rgba(40,40,40,0.35) solid;
+    
+    // 登录表单
+    .auth_form {
+      display: block;
+      position: relative;
+      padding: 2rem;
+      width: 26.5rem;
+      font-size: 1.1666667rem;
+      // background-color: #fff;
+      box-sizing: border-box;
+      border-radius: 4px;
+
+      // 关闭按钮
+      .guanbi {
+        z-index: 100;
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        font-size: 1.5rem
+          /* 18/12 */
+        ;
+        font-weight: 800;
+        // color: #fff;
+        color: #adb5bd;
+        cursor: pointer;
+      }
+
+      .guanbi:hover {
+        color: #333333;
+      }
+
+      .panel {
+        position: relative;
+        .title {
+          font-size: 1.7rem;
+          margin: 0 0 2rem;
+        }
+
+        .input_group {
+          margin-bottom: 0.5rem;
+
+          .input_box {
+            position: relative;
+            margin-bottom: 1.2rem;
+            display: flex;
+            // border-radius: 8px;
+            // flex-direction: row;
+            // justify-content: space-between;
+            input {
+              // padding: 0.833333rem;
+              padding-top: 1rem;
+              padding-bottom: 1rem;
+              padding-left: 1.6rem;
+              border-radius: 1.8rem;
+              outline: none;
+              box-sizing: border-box;
+              width: 100%;
+              font-size: 1.4rem;
+              letter-spacing: .083333rem;
+              gap: 20px;
+              backdrop-filter: blur(7px);
+              background-color: rgba(255,255,255, 0.3);
+              box-shadow: rgba(0, 0, 0, 0.16) 2px 2px 2px;
+              border: 1px rgba(255,255,255,0.4) solid;
+              border-bottom: 1px rgba(40,40,40,0.35) solid;
+              border-right: 1px rgba(40,40,40,0.35) solid;
+            }
+
+            input:focus {
+              // border-color: #4dabf7;
+              // border: 1px solid #4dabf7;
+            }
+            
+            // 输入框抖动效果
+            .shake {
+              animation: shake 800ms ease-in-out;
+            }
+
+            @keyframes shake {
+
+              10%,
+              90% {
+                border: 2px solid #e60012;
+                transform: translate3d(-1px, 0, 0);
+              }
+
+              20%,
+              80% {
+                border: 2px solid #e60012;
+                transform: translate3d(+2px, 0, 0);
+              }
+
+              30%,
+              70% {
+                border: 2px solid #e60012;
+                transform: translate3d(-4px, 0, 0);
+              }
+
+              40%,
+              60% {
+                transform: translate3d(+4px, 0, 0);
+              }
+
+              50% {
+                border: 2px solid #e60012;
+                transform: translate3d(-4px, 0, 0);
+              }
+            }
+
+            .send_code_btn {
+              position: absolute;
+              top: 0;
+              right: 0;
+              height: 100%;
+              line-height: 1;
+              font-size: 1.4rem;
+              padding-right: 1.666667rem
+                /* 20/12 */
+              ;
+              outline: none;
+              border: none;
+              border-radius: 2px;
+              background-color: transparent;
+              // color: #ffffff;
+              color: #333333;
+              cursor: pointer;
+            }
+
+            .cannot_send_code {
+              color: #adadad !important;
+            }
+          }
+        }
+
+        // 登录按钮、注册按钮、重置密码按钮
+        .login_btn,
+        .register_btn,
+        .reset_pwd_btn {
+          width: 100%;
+          height: 4rem
+            /* 40/12 */
+          ;
+          color: #fff;
+          background-color: #000000;
+          border: none;
+          border-radius: 8px;
+          outline: none;
+          box-sizing: border-box;
+          cursor: pointer;
+          margin-top: 5px;
+          font-size: 1.8rem
+            /* 14/12 */
+          ;
+        }
+
+        .login_btn:hover {
+          opacity: .8;
+        }
+
+        .reset_pwd_btn:hover {
+          opacity: .8;
+        }
+
+        .loading {
+          opacity: .8;
+        }
+
+        .prompt_box {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 1rem;
+          font-size: 1.16667rem;
+          // color: #fff;
+          color: #333333;
+          /deep/ .el-checkbox {
+            font-size: 1.4rem;
+            // color: #fff;
+          color: #333333;
+
+          }
+          /deep/ .el-checkbox__inner {
+            width: 16px;
+            height: 16px;
+          }
+
+          /deep/ .el-checkbox__label {
+            font-size: 1.4rem;
+            text-align: center;
+          }
+          span {
+            font-size: 1.4rem;
+            cursor: pointer;
+          }
+        }
+      }
+
+      // 登录表单退出动画
+      .login_out {
+        animation: to_left 500ms forwards;
+      }
+
+      @keyframes to_left {
+        0% {
+          left: 0;
+          opacity: 1;
+        }
+        50% {
+          opacity: .2;
+        }
+        100% {
+          left: -26.666667rem;
+          opacity: 0;
+        }
+      }
+
+      // 登录表单进入动画
+      .login_entry {
+        animation: to_right 500ms forwards;
+      }
+
+      @keyframes to_right {
+        0% {
+          left: -26.666667rem;
+          opacity: 0;
+        }
+        50% {
+          opacity: .8;
+        }
+        100% {
+          left: 0;
+          opacity: 1;
+        }
+      }
+
+      // 重置表单进入动画
+      .reset_entry {
+        animation: reset_to_left 500ms forwards;
+      }
+
+      @keyframes reset_to_left {
+        0% {
+          left: 26.666667rem;
+          opacity: 0;
+        }
+        50% {
+          opacity: .8;
+        }
+        100% {
+          left: 0;
+          opacity: 1;
+        }
+      }
+      
+      // 重置表单退出动画
+      .reset_out {
+        animation: reset_to_right 500ms forwards;
+      }
+
+      @keyframes reset_to_right {
+        0% {
+          left: 0rem;
+          opacity: 1;
+        }
+        50% {
+          opacity: .2;
+        }
+        100% {
+          left: 26.666667rem;
+          opacity: 0;
+        }
+      }
+
+    }
+  }
+
+  @keyframes entry {
+    0% {
+      top: -100px;
+      opacity: 0;
+    }
+    50% {
+      opacity: .8;
+    }
+    100% {
+      opacity: 1;
+      top: 0px;
+    }
+  }
+
+  // 退出动画
+  .out {
+    animation: out 500ms ease;
+  }
+
+  @keyframes out {
+    0% {
+      top: 0px;
+      opacity: 1;
+    }
+    50% {
+      opacity: .2;
+    }
+    100% {
+      opacity: 0;
+      top: -100px;
+    }
+  }
+}

@@ -1,0 +1,389 @@
+li {
+  list-style: none;
+}
+
+button {
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+
+#Home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  // text-align: center;
+  font-family: "Exo", sans-serif;
+  color: #fff;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-animation: gradientBG 10s ease infinite;
+  animation: gradientBG 10s ease infinite;
+
+  @-webkit-keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .container {
+    position: relative;
+    top: 35%;
+    text-align: center;
+  }
+
+  .logo_img {
+    height: 8.333333rem;
+    width: 8.333333rem;
+    gap: 20px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    background-color: rgba(230, 0, 18, 0.128);
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+    border: 1px rgba(255, 255, 255, 0.4) solid;
+    border-bottom: 1px rgba(40, 40, 40, 0.35) solid;
+    border-right: 1px rgba(40, 40, 40, 0.35) solid;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .logo_font {
+    line-height: 2rem;
+    text-align: center;
+    padding: 4rem 3rem;
+    font-family: '阿里妈妈数黑体 Bold';
+    font-size: 5rem;
+  }
+
+  .slogan_box {
+    margin-bottom: 2rem;
+    font: 200%;
+    border-right: .08em solid;
+    width: 28ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(28, end), blink-caret .5s step-end infinite alternate; //这里的alternate是为了让光标闪烁的正常一点
+    // color: white;
+    // font-size: 2em;
+    // width: 21em;
+    // height: 1.5em;
+    // border-right: 1px solid transparent;
+    // animation: typing 2s steps(42, end), blink-caret .75s step-end infinite;
+    // font-family: Consolas, Monaco;
+    // word-break: break-all;
+    // overflow: hidden;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+
+  @keyframes blink-caret {
+    50% {
+      border-color: transparent;
+    }
+  }
+
+  .nav {
+    ul {
+      display: flex;
+      flex-direction: row;
+      font-size: 1.5rem;
+
+      li {
+        padding: 0 2rem;
+        cursor: pointer;
+
+        span {
+          padding-right: 4px;
+        }
+      }
+    }
+  }
+
+  .login_box {
+    margin-top: 2rem;
+    padding: .8rem 2.4rem;
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    gap: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.077);
+    box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+    border: 1px rgba(255, 255, 255, 0.4) solid;
+    border-bottom: 1px rgba(40, 40, 40, 0.35) solid;
+    border-right: 1px rgba(40, 40, 40, 0.35) solid;
+  }
+
+  // 公众号、微信、等的展示
+  .related_link {
+    margin-top: 2.4rem;
+
+    ul {
+      display: flex;
+
+      li {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        margin: 0rem 1rem;
+        cursor: pointer;
+        .icon1 {
+          display: none;
+          width: 3rem;
+          height: 3rem;
+          line-height: 3rem;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.35);
+          // opacity: .6;
+          text-align: center;
+          color: #fff;
+
+          span {
+            font-size: 1.6rem;
+          }
+        }
+
+        .li_svg {
+          width: 100%;
+          height: 100%;
+        }
+
+        #my_wechat {
+          display: none;
+        }
+
+        #my_wechat_official_account {
+          display: none;
+        }
+
+        #github_link {
+          display: none;
+        }
+
+        #github_link::before {
+          content: '';
+          position: absolute;
+          top: -1rem;
+          left: 50%;
+          margin-left: -1rem;
+          border-right: 1rem solid transparent;
+          border-left: 1rem solid transparent;
+          border-bottom: 1rem solid #000000;
+        }
+      }
+
+      li:first-child:hover #my_wechat {
+        display: block;
+        width: 12.5rem;
+        height: 12.5rem;
+        position: absolute;
+        top: -16rem;
+        border-radius: 8px;
+        padding: 1rem;
+        z-index: 22;
+        animation: 500ms opacity2 forwards;
+        -webkit-animation: 500ms opacity2 forwards;
+        -moz-animation: 500ms opacity2 forwards;
+        gap: 20px;
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.077);
+        box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+        // border: 1px rgba(255, 255, 255, 0.4) solid;
+        border-bottom: 1px rgba(40, 40, 40, 0.35) solid;
+        border-right: 1px rgba(40, 40, 40, 0.35) solid;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      li:first-child:hover .icon1 {
+        display: block;
+      }
+
+      li:first-child:hover .li_svg {
+        display: none;
+      }
+
+      // 第二个图标
+      li:nth-child(2):hover #my_wechat_official_account {
+        z-index: 22;
+        display: block;
+        position: absolute;
+        top: -18rem;
+        width: 12.5rem;
+        height: 15.5rem;
+        padding: 0 1rem 1rem 1rem;
+        gap: 20px;
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.077);
+        box-shadow: rgba(0, 0, 0, 0.3) 2px 8px 8px;
+        border-bottom: 1px rgba(40, 40, 40, 0.35) solid;
+        border-right: 1px rgba(40, 40, 40, 0.35) solid;
+        animation: 500ms opacity2 forwards;
+        -webkit-animation: 500ms opacity2 forwards;
+        -moz-animation: 500ms opacity2 forwards;
+
+        span {
+          display: block;
+          height: 2rem;
+          line-height: 2rem;
+          text-align: center;
+          padding: .5rem 0rem;
+          font-size: 1.3334rem;
+        }
+
+        img {
+          position: absolute;
+          left: 0;
+          padding: 0 1rem 1rem 1rem;
+          width: calc(100% - 2rem);
+          bottom: 0rem;
+        }
+      }
+
+      li:nth-child(2):hover .icon1 {
+        display: block;
+
+        span {
+          font-size: 3rem;
+        }
+      }
+
+      li:nth-child(2):hover .li_svg {
+        display: none;
+      }
+
+      // 第三个 github
+      li:nth-child(3):hover #github_link {
+        display: block;
+        position: relative;
+        top: 1.2rem;
+        padding: 1rem;
+        width: 10rem;
+        // width: auto;
+        font-size: 1.3334rem;
+        text-align: center;
+        border-radius: 8px;
+        background-color: #000000;
+        box-shadow:
+          0px 2.5px 4.4px rgba(0, 0, 0, 0.031),
+          0px 6px 10.6px rgba(0, 0, 0, 0.044),
+          0px 11.3px 20px rgba(0, 0, 0, 0.055),
+          0px 20.1px 35.7px rgba(0, 0, 0, 0.066),
+          0px 37.6px 66.8px rgba(0, 0, 0, 0.079),
+          0px 90px 160px rgba(0, 0, 0, 0.11);
+        animation: 500ms opacity2 forwards;
+        -webkit-animation: 500ms opacity2 forwards;
+        -moz-animation: 500ms opacity2 forwards;
+      }
+
+      li:nth-child(3):hover .icon1 {
+        display: block;
+
+        span {
+          line-height: 3.6rem;
+          font-size: 2.4rem;
+        }
+      }
+
+      li:nth-child(3):hover .li_svg {
+        display: none;
+      }
+
+      @keyframes opacity2 {
+        0% {
+          opacity: 0
+        }
+
+        50% {
+          opacity: .8;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes opacity2 {
+        0% {
+          opacity: 0
+        }
+
+        50% {
+          opacity: .8;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-moz-keyframes opacity2 {
+        0% {
+          opacity: 0
+        }
+
+        50% {
+          opacity: .8;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .footer {
+    position: absolute;
+    bottom: 1.4rem;
+    // color: #fff;
+    a {
+      h2 {
+        color: #fff;
+      }
+    }
+  }
+}
