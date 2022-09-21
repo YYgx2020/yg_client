@@ -228,7 +228,7 @@ export default {
         this.formData.articleId = this.id * 1;
       } else {
         this.formData.origin = '留言板';
-        this.formData.origin = 0;
+        // this.formData.articleId = 0;
       }
       sendMessage(this.formData).then(res => {
         this.sending = false;
@@ -257,6 +257,8 @@ export default {
           });
       }).catch(err => {
         console.log(err);
+        this.$message.error('留言失败，请稍后重试')
+        this.sending = false;
       })
 
     },

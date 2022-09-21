@@ -27,7 +27,7 @@
           </div>
           <div class="like_row">
             <span :style="!item.likeClick? '': 'color: #1e80ff;'" @click="dianzanEvent(index, item)"><i
-                class="iconfont icon-31dianzan"></i>&nbsp;{{item.like}}</span>
+                class="iconfont icon-good"></i>&nbsp;{{item.like}}</span>
           </div>
         </div>
       </li>

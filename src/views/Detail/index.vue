@@ -99,7 +99,7 @@ import Header from '@/components/common/Header';
 import MsgInput from '@/components/common/MsgInput';
 import HotMessage from '@/components/common/HotMessage/index.vue';
 import { MarkdownPreview } from "vue-meditor";
-import { getArticleInfo, updateArticle } from "@/api";
+import { getArticleInfo, updateArticle_2 } from "@/api";
 export default {
   components: {
     Header,
@@ -213,7 +213,7 @@ export default {
           let read = this.articleData.read;
           console.log('阅读量+1');
           let data = { id, read }
-          this.updateArticle(data)
+          this.updateArticle_2(data)
           this.$nextTick(() => {
             console.log(this.$refs);
             let preview = document.getElementById('preview')
@@ -245,7 +245,7 @@ export default {
         console.log(err);
       })
     },
-    updateArticle(data) {
+    updateArticle_2(data) {
       let { id, read, like } = data
       console.log(id, read, like);
       let updateData = { id }
@@ -255,7 +255,7 @@ export default {
       read++
       Object.assign(updateData, { read })
       like && Object.assign(updateData, { like })
-      updateArticle(updateData).then(res => {
+      updateArticle_2(updateData).then(res => {
         console.log(res);
         read && this.articleData.read++
       }).catch(err => {
@@ -276,7 +276,7 @@ export default {
         this.isClicked = false;
       }
       let data = { id, like }
-      this.updateArticle(data)
+      this.updateArticle_2(data)
     },
 
     // 锚点定位

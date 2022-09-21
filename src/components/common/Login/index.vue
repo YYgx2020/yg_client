@@ -79,7 +79,7 @@ import md5 from 'js-md5';  // 对密码进行 md5 加密后再传给后端
 
 const reg = new RegExp("^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$");
 const shakeTime = 800;
-const expire_time = 15  // cookie 过期时间 1 天
+const expire_time = 15  // cookie 过期时间 15 天
 
 export default {
   name: 'Login',

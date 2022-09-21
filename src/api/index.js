@@ -176,6 +176,14 @@ export function updateArticle(data) {
   })
 }
 
+export function updateArticle_2(data) {
+  return axios({
+    url: '/api/article/update_2',
+    method: 'post',
+    data,
+  })
+}
+
 // 更新文章评论数据
 export function updateComment(data) {
   return axios({
